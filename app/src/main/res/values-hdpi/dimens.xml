@@ -5,11 +5,10 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="test">40dp</dimen>
+    <dimen name="test">15dp</dimen>
     <dimen name="indexPasswordMarginTop">10dp</dimen>
-    <dimen name="indexBTFBMargin">10dp</dimen>
-    <dimen name="indexBTGmailMarginLeft">10dp</dimen>
+    <dimen name="indexBTFBMargin">5dp</dimen>
+    <dimen name="indexBTGmailMarginLeft">5dp</dimen>
     <dimen name="indexBTGmailMarginTop">5dp</dimen>
     <dimen name="happtyToSeeYouPadding">15dp</dimen>
-
 </resources>
