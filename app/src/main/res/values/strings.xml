@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">LoyaltyApp</string>
-    <string name="orGetStartedWithEmail">OR GET STARTED WITH EMAIL</string>
+    <string name="getStartedWithEmail">GET STARTED WITH EMAIL</string>
+    <string name="happyToSeeYou">Content de vous revoir !</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -8,5 +9,14 @@
     <string name="title_activity_index">IndexActivity</string>
     <string name="youEmail">Votre Email</string>
 
+
     <string name="facebook_app_id">1894532677490674</string>
+
+    <string name="facebook">FACEBOOK</string>
+    <string name="gmail">Google</string>
+    <string name="or">OU</string>
+    <string name="email">Email</string>
+    <string name="forgotPassword">Mot de passse oublié ?</string>
+    <string name="connexion">Connexion</string>
+
 </resources>

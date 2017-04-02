@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\SERIALIZABLE\.android\build-cache\529e511657322eaaf40418d06a81014a8de58d36\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
+        <dex dex="C:\Users\SERIALIZABLE\Downloads\LoyaltyApp\LoyaltyApp\app\build\intermediates\pre-dexed\debug\classes_06a91b64c001d252b1c2b19aace5d0c52dc7588d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SERIALIZABLE\.android\build-cache\30bab7df978b284ecf9faeccc6dcb94c6f5a37b4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="C:\Users\SERIALIZABLE\Downloads\LoyaltyApp\LoyaltyApp\app\build\intermediates\pre-dexed\debug\classes_c85faa2bba48277d488517a005afb4ee683beab6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SERIALIZABLE\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\SERIALIZABLE\Downloads\LoyaltyApp\LoyaltyApp\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_1b9b2ca3dc2db211c377108be998d185afa301af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SERIALIZABLE\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\SERIALIZABLE\Downloads\LoyaltyApp\LoyaltyApp\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_95bc87da4020114d583b2ad2100ba7493047e83f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SERIALIZABLE\.android\build-cache\ed41fb8842c53cf5b93f62f36fd1d5d9f61fa1da\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="820605b42a2d3d9cb9e6c4cc7453fb4f802aedff">
+        <dex dex="C:\Users\SERIALIZABLE\Downloads\LoyaltyApp\LoyaltyApp\app\build\intermediates\pre-dexed\debug\classes_8a3ae6fd3091065086f4cfb0b6b760ab97b0d784.jar" />
+    </item>
+
+</items>
