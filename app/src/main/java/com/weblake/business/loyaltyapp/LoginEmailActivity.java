@@ -2,26 +2,14 @@ package com.weblake.business.loyaltyapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.logging.Level;
-
-import cz.msebera.android.httpclient.Header;
 
 public class LoginEmailActivity extends AppCompatActivity {
 
@@ -29,6 +17,7 @@ public class LoginEmailActivity extends AppCompatActivity {
     EditText loginPassword;
     EditText loginPasswordConfirm;
     Button loginButton;
+    boolean login=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +26,37 @@ public class LoginEmailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("email"); //if it's a string you stored.
-        loginEmail.setText(email);
+       loginEmail.setText(email);
+        if(intent.getBooleanExtra("emailAlreadyExists",false)){
+            loginPasswordConfirm.setVisibility(View.INVISIBLE);
+            login=true;
+        }
 
+       Log.d("login : email",email);
+
+        Log.d("emailAlreadyExists",""+intent.getBooleanExtra("emailAlreadyExists",false));
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String password = loginPassword.getText().toString();
                 String passwordConfirm = loginPasswordConfirm.getText().toString();
-                if(password.equals(passwordConfirm)){
+                if(password.equals(passwordConfirm) || login){
                     RequestParams params= new RequestParams();
                     params.put("Email",loginEmail.getText().toString());
                     params.put("Password",password);
-                    invokeWS(params);
+                    String url = "http://cartedevisite.ma/test/registerByEmail.php";
+                    WebService webService = new WebService(params, url, getApplicationContext());
+                    if(login){
+                         url = "http://cartedevisite.ma/test/loginByEmailAndPassword.php";
+
+                        webService.login(params, url, getApplicationContext());
+
+                    }else {
+                        webService.registerByEmail(params, url, getApplicationContext());
+                    }
+
+
+
                 }else {
                     Toast.makeText(getApplicationContext(), "Mots de passe n'est pas identique", Toast.LENGTH_LONG).show();
                 }

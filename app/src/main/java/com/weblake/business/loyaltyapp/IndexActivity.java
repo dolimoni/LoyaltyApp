@@ -77,10 +77,28 @@ public class IndexActivity extends Activity {
         indexBTConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexActivity.this, LoginEmailActivity.class);
-                intent.putExtra("email",indexETEmail.getText().toString());
+
                // Toast.makeText(getApplicationContext(), "You are successfully registered! "+email, Toast.LENGTH_LONG).show();
-                IndexActivity.this.startActivity(intent);
+                RequestParams params = new RequestParams();
+                params.put("Email",indexETEmail.getText().toString());
+                WebService webService = new WebService();
+                webService.setParams(params);
+                webService.setContext(getApplicationContext());
+
+
+                // return
+                webService.isEmailAlreadyExists(params,"http://cartedevisite.ma/test/emailAlreadyExists.php",getApplicationContext(),indexETEmail.getText().toString());
+
+                /*if(!emailExists){
+                    Log.d("emailAlreadyExists","Yes");
+                    intent.putExtra("emailAlreadyExists",true);
+                }else {
+
+                    Log.d("emailAlreadyExists","No");
+                    intent.putExtra("emailAlreadyExists",false);
+                }*/
+
+
             }
         });
 
