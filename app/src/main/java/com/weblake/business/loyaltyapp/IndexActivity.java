@@ -1,11 +1,6 @@
 package com.weblake.business.loyaltyapp;
 
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import org.json.JSONException;
@@ -15,27 +10,20 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.os.AsyncTask;
 
+import com.facebook.FacebookSdk;
+import com.facebook.login.widget.LoginButton;
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-import com.loopj.android.http.ResponseHandlerInterface;
 
-import java.util.concurrent.ThreadFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import cz.msebera.android.httpclient.Header;
-import cz.msebera.android.httpclient.HttpResponse;
 
 /**
  *
@@ -48,12 +36,18 @@ public class IndexActivity extends Activity {
     //EditText emailET;
     //Validation Button
     Button indexBTFB;
+    Button indexBTConnexion;
+    LoginButton loginButton;
+    EditText indexETEmail;
     Logger logger = Logger.getLogger(IndexActivity.class.getName());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_index);
-        indexBTFB=(Button) findViewById(R.id.indexBTFB);
+        loginButton=(LoginButton) findViewById(R.id.login_button);
+        indexBTConnexion=(Button) findViewById(R.id.indexBTConnexion);
+        indexETEmail=(EditText) findViewById(R.id.indexETEmail);
        /* // Find Email Edit View control by ID
         emailET = (EditText)findViewById(R.id.);*/
         // Instantiate Progress Dialog object
@@ -64,12 +58,32 @@ public class IndexActivity extends Activity {
         prgDialog.setCancelable(false);
         //validatiIB = (ImageButton)findViewById(R.id.indexValidate);
 
-        indexBTFB.setOnClickListener(new View.OnClickListener() {
+    /*    loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginFB loginFB = new LoginFB(getApplicationContext(), loginButton);
+
+
+
+            }
+        });*/
+        /*indexBTFB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerUser();
             }
+        });*/
+
+        indexBTConnexion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(IndexActivity.this, LoginEmailActivity.class);
+                intent.putExtra("email",indexETEmail.getText().toString());
+               // Toast.makeText(getApplicationContext(), "You are successfully registered! "+email, Toast.LENGTH_LONG).show();
+                IndexActivity.this.startActivity(intent);
+            }
         });
+
 
     }
 

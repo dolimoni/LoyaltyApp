@@ -21,15 +21,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SERIALIZABLE\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="C:\Users\SERIALIZABLE\Downloads\LoyaltyApp\LoyaltyApp\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_1b9b2ca3dc2db211c377108be998d185afa301af.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\SERIALIZABLE\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
@@ -39,12 +30,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\SERIALIZABLE\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\SERIALIZABLE\Downloads\LoyaltyApp\LoyaltyApp\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_1b9b2ca3dc2db211c377108be998d185afa301af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SERIALIZABLE\.android\build-cache\3a81985236bfb7cf4c9ab9e856a59d6799ef778e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b000ecceb9877fefcdc7ab1959ff03df91551656">
+        <dex dex="C:\Users\SERIALIZABLE\AndroidStudioProjects\LoyaltyApp\app\build\intermediates\pre-dexed\debug\classes_0b4af8da4675b438ba7e6438150f781f566cc5ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\SERIALIZABLE\.android\build-cache\ed41fb8842c53cf5b93f62f36fd1d5d9f61fa1da\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="820605b42a2d3d9cb9e6c4cc7453fb4f802aedff">
         <dex dex="C:\Users\SERIALIZABLE\Downloads\LoyaltyApp\LoyaltyApp\app\build\intermediates\pre-dexed\debug\classes_8a3ae6fd3091065086f4cfb0b6b760ab97b0d784.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SERIALIZABLE\.android\build-cache\a0cae6295ee2b8f5566df9909ecef06c0f308cfe\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="345a1b5cf5b144ce18ba6962bc66a7e2f26c1c1b">
+        <dex dex="C:\Users\SERIALIZABLE\AndroidStudioProjects\LoyaltyApp\app\build\intermediates\pre-dexed\debug\classes_240084a9678efcefe1351cc6524ab36d6ba05935.jar" />
     </item>
 
 </items>

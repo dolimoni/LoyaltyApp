@@ -10,7 +10,7 @@
     <string name="youEmail">Votre Email</string>
 
 
-    <string name="facebook_app_id">1894532677490674</string>
+    <string name="facebook_app_id">278309032610727</string>
 
     <string name="facebook">FACEBOOK</string>
     <string name="gmail">Google</string>
@@ -18,5 +18,9 @@
     <string name="email">Email</string>
     <string name="forgotPassword">Mot de passse oublié ?</string>
     <string name="connexion">Connexion</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login_email">loginEmailActivity</string>
 
 </resources>

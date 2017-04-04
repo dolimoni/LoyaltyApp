@@ -38,7 +38,7 @@
             android:textColor="#FFFFFF"
             android:textSize="25dp" />
 
-        <Button
+   <!--     <Button
             android:id="@+id/indexBTFB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,8 +53,17 @@
             android:paddingTop="3dip"
             android:text="@string/facebook"
             android:textColor="#54545E"
-            android:textSize="13dip" />
+            android:textSize="13dip" />-->
 
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/indexBTFBMargin"
+            android:textSize="20sp"
+
+            />
         <Button
             android:id="@+id/indexBTGmail"
             android:layout_width="match_parent"
@@ -115,7 +124,7 @@
         </RelativeLayout>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/indexETEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -127,22 +136,8 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress" />
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:layout_marginTop="@dimen/indexPasswordMarginTop"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:ems="10"
-            android:hint="Mot de passe"
-            android:inputType="textPassword"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF" />
-
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/indexBTConnexion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
