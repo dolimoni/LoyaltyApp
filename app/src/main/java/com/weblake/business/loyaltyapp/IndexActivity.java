@@ -14,12 +14,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.Profile;
+import com.facebook.ProfileTracker;
+import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,6 +51,12 @@ public class IndexActivity extends Activity {
     LoginButton loginButton;
     EditText indexETEmail;
     Logger logger = Logger.getLogger(IndexActivity.class.getName());
+    private String emailFb="";
+
+    private CallbackManager callbackManager;
+
+    private AccessTokenTracker accessTokenTracker;
+    private ProfileTracker profileTracker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,15 +75,15 @@ public class IndexActivity extends Activity {
         prgDialog.setCancelable(false);
         //validatiIB = (ImageButton)findViewById(R.id.indexValidate);
 
-    /*    loginButton.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginFB loginFB = new LoginFB(getApplicationContext(), loginButton);
+                loginFB();
 
 
 
             }
-        });*/
+        });
         /*indexBTFB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -230,5 +247,88 @@ public class IndexActivity extends Activity {
     }
 
 
+    private  void loginFB() {
+
+
+        callbackManager = CallbackManager.Factory.create();
+
+
+
+        accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken oldToken, AccessToken newToken) {
+            }
+        };
+
+        profileTracker = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile newProfile) {
+                //Log.d("stats1",newProfile.getFirstName());
+            }
+        };
+        accessTokenTracker.startTracking();
+        profileTracker.startTracking();
+
+
+        loginButton.setReadPermissions(Arrays.asList(
+                "public_profile", "email", "user_birthday"));
+
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                Log.d("LoginActivity", "before0");
+
+                AccessToken accessToken = loginResult.getAccessToken();
+                Log.d("LoginActivity", "before");
+                GraphRequest request = GraphRequest.newMeRequest(accessToken, new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object,GraphResponse response) {
+                        Log.d("LoginActivity", object.toString());
+                        Log.d("LoginActivity2", response.toString());
+                        Log.d("LoginActivity2Email : ", object.opt("email").toString());
+
+                        WebService webService = new WebService();
+                        RequestParams params = new RequestParams();
+                        String email = object.opt("email").toString();
+                        params.put("Email",email);
+                        String url = "http://cartedevisite.ma/test/registerFB.php";
+                        webService.registerByFB(params,url,getApplicationContext(),email);
+
+                        //response="success";
+                    }
+                });
+                Bundle parameters = new Bundle();
+                parameters.putString("fields", "id,name,email");
+                request.setParameters(parameters);
+                request.executeAsync();
+
+
+            }
+
+            @Override
+            public void onCancel() {
+                Log.d("LoginActivity", "onCancel");
+                // response="false";
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Log.d("LoginActivity", "onError");
+               /* Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
+                response="false";*/
+            }
+        });
+
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int responseCode, Intent intent) {
+        super.onActivityResult(requestCode, responseCode, intent);
+        //Facebook login
+        callbackManager.onActivityResult(requestCode, responseCode, intent);
+
+
+    }
 
 }
