@@ -12,14 +12,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    ImageView image;
+    Button mainActivityBTQRCode;
+    ImageView mainActivityIVQRCode;
+    Animation animZoomOut;
+    Animation move;
+    AnimationSet animationSet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        findViewByIdAll();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -40,6 +53,32 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        mainActivityIVQRCode.setVisibility(View.INVISIBLE);
+        annimation();
+    }
+
+    private void findViewByIdAll() {
+        mainActivityBTQRCode = (Button) findViewById(R.id.MainActivityBTQRCode);
+        mainActivityIVQRCode = (ImageView) findViewById(R.id.MainActivityIVQRCode);
+    }
+
+    private void annimation() {
+         animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.zoom_out);
+        move = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.move);
+
+        animationSet = new AnimationSet(true);
+        animationSet.addAnimation(animZoomOut);
+        animationSet.addAnimation(move);
+        // Zoom Out
+        mainActivityBTQRCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+                mainActivityIVQRCode.startAnimation(animationSet);
+            }
+        });
     }
 
     @Override
