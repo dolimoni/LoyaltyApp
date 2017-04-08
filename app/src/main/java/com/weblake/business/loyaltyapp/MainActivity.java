@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         mainActivityBTQRCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 mainActivityIVQRCode.startAnimation(animationSet);
             }
         });
