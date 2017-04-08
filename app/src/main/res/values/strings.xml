@@ -6,7 +6,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="title_activity_index">IndexActivity</string>
     <string name="youEmail">Votre Email</string>
 
 
@@ -19,8 +18,12 @@
     <string name="forgotPassword">Mot de passse oublié ?</string>
     <string name="connexion">Connexion</string>
 
+    <!-- Activities Label-->
+    <string name="title_activity_index">IndexActivity</string>
+    <string name="login_fb">LoginFB</string>
+    <string name="title_activity_login_email">loginEmailActivity</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_login_email">loginEmailActivity</string>
 
 </resources>
